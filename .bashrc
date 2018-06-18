@@ -1,4 +1,4 @@
-export GREP_OPTIONS="--color=auto"
+#export GREP_OPTIONS="--color=auto"
 export GREP_COLOR="4;33"
 export CLICOLOR="auto"
 
@@ -137,7 +137,8 @@ function proml {
   # Previous Line
   # PS1="$LIGHT_GREEN[\u@\h \W]$LIGHT_RED \$(parse_git_branch)$WHITE\$ "
 
-  PS1="$GREEN[\$(date +%H:%M:%S)] $WHITE[pigor \W]$LIGHT_GREEN\$(parse_git_branch)$WHITE\$$LIGHT_GRAY "
+  #PS1="$GREEN[\$(date +%H:%M:%S)] $WHITE[matheus \W]$LIGHT_GREEN\$(parse_git_branch)$WHITE\$$LIGHT_GRAY "
+  PS1="$WHITE[matheus \W]$LIGHT_GREEN\$(parse_git_branch)$WHITE\$$LIGHT_GRAY "
   PS2='> '
   PS4='+ '
 
@@ -187,16 +188,11 @@ git-prompt () {
       STATE="${STATE}${YELLOW}*${NO_COLOR}"
     fi
 
-    PS1="$GREEN[\$(date +%H:%M:%S)] $WHITE[pigor $BLUE\W$WHITE]${NO_COLOR}(${PROMPT_COLOR}${BRANCH}${NO_COLOR}${STATE}) " # (${YELLOW}$(rvm_version)${NO_COLOR})\n$ "
+    # PS1="$GREEN[\$(date +%H:%M:%S)] $WHITE[matheus $BLUE\W$WHITE]${NO_COLOR}(${PROMPT_COLOR}${BRANCH}${NO_COLOR}${STATE}) " # (${YELLOW}$(rvm_version)${NO_COLOR})\n$ "
+    PS1="$WHITE[matheus $BLUE\W$WHITE]${NO_COLOR}(${PROMPT_COLOR}${BRANCH}${NO_COLOR}${STATE}) " # (${YELLOW}$(rvm_version)${NO_COLOR})\n$ "
   else
-    PS1="$GREEN[\$(date +%H:%M:%S)] $WHITE[pigor $BLUE\W$WHITE]${NO_COLOR} " # (${YELLOW}$(rvm_version)${NO_COLOR})\n\$ "
+    # PS1="$GREEN[\$(date +%H:%M:%S)] $WHITE[matheus $BLUE\W$WHITE]${NO_COLOR} " # (${YELLOW}$(rvm_version)${NO_COLOR})\n\$ "
+    PS1="$WHITE[matheus $BLUE\W$WHITE]${NO_COLOR} " # (${YELLOW}$(rvm_version)${NO_COLOR})\n\$ "
   fi
 }
 PROMPT_COMMAND=git-prompt
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-jp2a --width=100 --background=light ~/Documents/projects/idopter-projects/idopterlabs.jpg
