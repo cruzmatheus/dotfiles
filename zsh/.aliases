@@ -1,0 +1,25 @@
+function dcompose() {
+    docker-compose build $1 && docker-compose run --service-ports $@
+}
+
+function drun() {
+    docker-compose run --service-ports $@
+}
+
+function dd() {
+    docker-compose down
+}
+
+function grebase() {
+    BASE=$1
+    CURRENT_GIT_BRANCH=$(git branch --show-current)
+    if [ -z $BASE ]; then
+      echo "No branch selected for rebase. Please select one."
+    else
+      git checkout $BASE && git pull && git checkout $CURRENT_GIT_BRANCH && git rebase -i $BASE
+    fi
+}
+
+alias work="cd ~/dev/workspace"
+alias rspec="bundle exec rspec $1"
+alias cop="bundle exec rubocop -a"
